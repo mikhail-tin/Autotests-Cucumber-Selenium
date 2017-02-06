@@ -1,0 +1,38 @@
+{
+  "name": "AutotestsByCucumberAndSelenium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cucumber": "cucumberjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/cucumber": "0.0.35",
+    "@types/gulp-tslint": "^3.6.30",
+    "@types/node": "^7.0.4",
+    "@types/selenium-webdriver": "^2.53.39",
+    "chai": "^3.5.0",
+    "chromedriver": "^2.27.2",
+    "cucumber": "^2.0.0-rc.6",
+    "gulp": "3.9.1",
+    "gulp-cli": "^1.2.2",
+    "gulp-contains": "^1.1.0",
+    "gulp-cucumber": "0.0.22",
+    "gulp-filter": "^5.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-tsc": "^1.2.6",
+    "gulp-tslint": "^7.0.1",
+    "lodash": "^4.17.4",
+    "node-notifier": "^4.6.1",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1",
+    "selenium-webdriver": "^3.0.1",
+    "ts-node": "^2.0.0",
+    "tslint": "^4.3.1",
+    "typescript": "^2.1.5"
+  }
+}
