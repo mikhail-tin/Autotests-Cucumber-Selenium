@@ -4,6 +4,7 @@ import * as chromedriver from 'chromedriver';
 
 function definitions(): void {
     this.Given(/^I open (?:\s)?(.*)$/, async function (key: string): Promise<void> {
+        
         return await console.log('Step 1');
     });
 
