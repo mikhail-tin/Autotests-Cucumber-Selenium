@@ -3,6 +3,7 @@ import * as WebDriver from 'selenium-webdriver';
 import * as chromedriver from 'chromedriver';
 const By = WebDriver.By;
 const until = WebDriver.until;
+import { Lingvolive } from '../page/lingvolive';
 
 function definitions(): void {
 
@@ -38,6 +39,10 @@ function definitions(): void {
         expect(result.length).be.above(0);
     });
 
+    this.Then(/^I should see result '(.*)'$/, { timeout: 60000 }, async function (text: string): Promise<void> {
+        await delay(5000);
+        await Lingvolive.findResults(this.dr, text);
+    });
 };
 
 module.exports = definitions;
