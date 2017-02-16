@@ -31,7 +31,7 @@ gulp.task('build', ['build-ts', 'tslint']);
 gulp.task('run-cucumber', ['build-ts'], function() {
     return gulp.src(paths.allFeatures)
     .pipe(cucumber({
-        steps: paths.dirBuildFeatures + '/step_definitions/*.js',
-        support: paths.dirBuildFeatures + '/support/*.js'
+        steps: paths.dirBuild + '/step_definitions/*.js',
+        support: paths.dirBuild + '/support/*.js'
     }));
 });
