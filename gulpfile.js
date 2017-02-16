@@ -8,25 +8,18 @@ const cucumber = require('gulp-cucumber');
 const paths = {
     dirBuild: './out',
     allSrcTs: './src/**/*.ts',
-    allFeatures: './features/*.feature',
-    dirBuildFeatures: './out/features'
+    allFeatures: './features/*.feature'
 };
 
 gulp.task('build-ts', function () {
-    return gulp.src(paths.allSrcTs)
-        .pipe(ts(tsconfig.compilerOptions))
-        .pipe(gulp.dest(paths.dirBuild));
+    return gulp.src(paths.allSrcTs).pipe(ts(tsconfig.compilerOptions)).pipe(gulp.dest(paths.dirBuild));
 });
 
 gulp.task("tslint", () => {
-    return gulp.src(paths.allSrcTs)
-        .pipe(tslint({
-            formatter: "verbose"
-        }))
-        .pipe(tslint.report())
+    return gulp.src(paths.allSrcTs).pipe(tslint({formatter: "verbose"})).pipe(tslint.report())
 });
 
-gulp.task('build', ['build-ts', 'tslint']);
+// gulp.task('build', ['build-ts', 'tslint']);
 
 gulp.task('run-cucumber', ['build-ts'], function() {
     return gulp.src(paths.allFeatures)
