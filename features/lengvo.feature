@@ -4,6 +4,6 @@ Feature: Abbyy lingvo
 
 @lingvo
 Scenario: translate
-    Given I open lingvolive.com/ru-ru/translate/en-ru/world
+    Given I open lingvolive
     When I translate 'Hello'
     Then I should see result 'алло!'

@@ -1,29 +1,41 @@
 import * as WebDriver from 'selenium-webdriver';
 const By = WebDriver.By;
 const until = WebDriver.until;
-import {Helper} from '../helper/helper'
+import {Helper} from '../helper/helper';
 
-export class Lingvolive {
-    
-    public static translateBtn = By.xpath("//button[contains(text(), 'Перевести')]");
-    public static inputBox = By.xpath("//input[@name= 'term']");
+export class LingvolivePage {
+    private dr: WebDriver.WebDriver;
 
-    public static async translate(dr: WebDriver.WebDriver): Promise<void> {
-        let btn = await dr.findElement(this.translateBtn);
+    constructor(dr: WebDriver.WebDriver) {
+        this.dr = dr;
+    }
+
+    private async translateButton(): Promise<WebDriver.WebElement> {
+        return await this.dr.findElement(By.xpath("//button[contains(text(), 'Перевести')]"));
+    }
+
+    private async inputBox(): Promise<WebDriver.WebElement> {
+        return await this.dr.findElement(By.xpath("//input[@name= 'term']"));
+    }
+
+    private async clickOnTranslate(): Promise<void> {
+        let btn = await this.translateButton();
         await btn.click();
     }
 
-    public static async writeText(dr: WebDriver.WebDriver, text: string): Promise<void> {
-        let input = await dr.findElement(this.inputBox);
+    private async setTextForTranslate(text: string): Promise<void> {
+        let input = await this.inputBox();
         await input.sendKeys(text);
     }
 
-    public static async findResults(dr: WebDriver.WebDriver, text: string): Promise<number> {
-        let result = await dr.findElements(By.xpath(`//span[text()='${text}']`));
-        return result.length;
+    // tslint:disable-next-line:member-ordering
+    public async translate(test: string): Promise<void> {
+        await this.setTextForTranslate(test);
+        await this.clickOnTranslate();
     }
 
-    public static async complexAction(dr: WebDriver.WebDriver, text: string): Promise<void> {
-        await Helper.writeAndClick(dr, this.inputBox, text, this.translateBtn)
+    public async findCountOfResults(text: string): Promise<number> {
+        let result = await this.dr.findElements(By.xpath(`//span[text()='${text}']`));
+        return result.length;
     }
 }

@@ -19,7 +19,7 @@ gulp.task("tslint", () => {
     return gulp.src(paths.allSrcTs).pipe(tslint({formatter: "verbose"})).pipe(tslint.report())
 });
 
-// gulp.task('build', ['build-ts', 'tslint']);
+gulp.task('build', ['tslint', 'build-ts']);
 
 gulp.task('run-cucumber', ['build-ts'], function() {
     return gulp.src(paths.allFeatures)

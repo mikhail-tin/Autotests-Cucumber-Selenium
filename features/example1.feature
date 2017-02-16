@@ -5,6 +5,6 @@ Feature: Google Search
 
 @google
 Scenario: Search Hello World in Google
-    Given I open google.com
+    Given I open 'google.com'
     When I find 'Hello World G'
     Then I should see result
