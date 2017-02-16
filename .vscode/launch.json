@@ -13,14 +13,10 @@
             "outFiles": [
                 "${workspaceRoot}\\out\\**\\*.js"
             ],
-            "sourceMaps": true
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Cucumber",
-            "program": "${workspaceRoot}\\node_modules\\cucumber\\bin\\cucumber.js",
-            "cwd": "${workspaceRoot}\\out"
+            "sourceMaps": true,
+            "args": [
+                "run-cucumber"
+            ]
         }
     ]
 }
