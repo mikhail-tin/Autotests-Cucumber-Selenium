@@ -1,6 +1,7 @@
 import * as WebDriver from 'selenium-webdriver';
 const By = WebDriver.By;
 const until = WebDriver.until;
+import {Helper} from '../helper/helper'
 
 export class Lingvolive {
     
@@ -20,5 +21,9 @@ export class Lingvolive {
     public static async findResults(dr: WebDriver.WebDriver, text: string): Promise<number> {
         let result = await dr.findElements(By.xpath(`//span[text()='${text}']`));
         return result.length;
+    }
+
+    public static async complexAction(dr: WebDriver.WebDriver, text: string): Promise<void> {
+        await Helper.writeAndClick(dr, this.inputBox, text, this.translateBtn)
     }
 }
