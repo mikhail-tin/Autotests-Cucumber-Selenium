@@ -5,9 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cucumber": "cucumberjs"
+    "cucumber": "cucumberjs",
+    "parallel-cucumber-js": "parallel-cucumber-js"
   },
-  "author": "",
+  "author": {
+    "name": "Mikhail T.",
+    "email": "mikhail.tin@gmail.com"
+  },
   "license": "ISC",
   "dependencies": {
     "@types/chai": "^3.4.34",
@@ -28,6 +32,7 @@
     "gulp-tslint": "^7.0.1",
     "lodash": "^4.17.4",
     "node-notifier": "^4.6.1",
+    "parallel-cucumber": "^1.0.1",
     "request": "^2.79.0",
     "request-promise": "^4.1.1",
     "selenium-webdriver": "^3.0.1",
