@@ -1,5 +1,5 @@
 // import { defineSupportCode, Hooks, HookScenario } from 'cucumber';
-import settings from '../settings/settings';
+import settings from '../store/settings';
 import {expect} from 'chai';
 
 function definitions(): void {

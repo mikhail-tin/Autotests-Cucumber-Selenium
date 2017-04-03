@@ -6,7 +6,7 @@ import {ITimeStamp } from '../interfaces/ITimeStamp';
 
 export class Helper {
 
-    public static makeDelay = async (interval: number): Promise<void> => {
+    public static async makeDelay(interval: number): Promise<void> {
         return new Promise<void>(resolve => { setTimeout(() => { resolve(); }, interval); });
     }
 

@@ -26,6 +26,6 @@ gulp.task('run-cucumber', ['build-ts'], function() {
     .pipe(cucumber({
         steps: paths.dirBuild + '/step_definitions/*.js',
         support: paths.dirBuild + '/support/*.js',
-        tags: '@lingvo'
+        tags: '@privnote'
     }));
 });

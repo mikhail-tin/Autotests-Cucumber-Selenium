@@ -3,7 +3,7 @@ import * as WebDriver from 'selenium-webdriver';
 import * as chromedriver from 'chromedriver';
 const By = WebDriver.By;
 const until = WebDriver.until;
-import { LingvolivePage } from '../page/lingvolive';
+import { LingvolivePage } from '../page/lingvolivePage';
 import { Helper as h } from '../helper/helper';
 
 function definitions(): void {

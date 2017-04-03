@@ -2,11 +2,8 @@ import * as WebDriver from 'selenium-webdriver';
 const By = WebDriver.By;
 const until = WebDriver.until;
 import {Helper} from '../helper/helper';
+import {BasePage } from './basePage';
 
-export class GooglePage {
-    private dr: WebDriver.WebDriver;
+export class GooglePage extends BasePage {
 
-    constructor(dr: WebDriver.WebDriver) {
-        this.dr = dr;
-    }
 }
